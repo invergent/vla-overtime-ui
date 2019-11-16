@@ -9,7 +9,7 @@ cache:
     - ./node_modules
 env:
   global:
-    - CC_TEST_REPORTER_ID=c769908148c06cd6bfaaa938de3869a24e47f9e982dc4ad34219388f5ae1a49a
+    - CC_TEST_REPORTER_ID=2a50ce8a0537089165daf21a7d40a61d81fcf99e4cc99556fb55eadb7a304e94
 language: node_js
 node_js:
   - '11.10.1'

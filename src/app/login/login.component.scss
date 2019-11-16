@@ -19,7 +19,7 @@
     .brand {
       margin-top: 30px;
       .image-wrapper {
-        width: 80px;
+        width: 120px;
         margin: auto;
         cursor: pointer;
         img {
@@ -31,14 +31,11 @@
       text-align: center;
       padding: 50px 0 20px;
       p {
-        font-size: 2rem;
+        font-size: 2.4rem;
         color: $color-black;
         margin: auto;
-        .cleon {
+        .the-v {
           color: $brand-color;
-        }
-        .time {
-          color: $brand-color-2;
         }
         @media screen and (max-width: 400px) {
           font-size: 1.8rem;
@@ -71,15 +68,12 @@
             width: 100%;
             height: 45px;
             padding: 0 20px;
-            border: none;
-            border-bottom: 1px solid #ACACAC;
+            border: 1px solid #ACACAC;
+            border-radius: 10px;
             box-sizing: border-box;
             @include placeholder {
               color: rgba(0,0,0,.2);
             }
-          }
-          input:-webkit-autofill {
-            -webkit-box-shadow: 0 0 0px 1000px white inset;
           }
         }
         .button {
@@ -92,7 +86,7 @@
             height: 45px;
             color: white;
             font-size: $primary-btn-size;
-            border-radius: 100000px;
+            border-radius: 10px;
             border: none;
             cursor: pointer;
             &:disabled {
@@ -119,7 +113,7 @@
       text-align: center;
       margin-top: 30px;
       a {
-        color: $brand-color-2;
+        color: $brand-color;
         text-decoration: none;
         opacity: .70;
       }

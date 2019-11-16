@@ -94,7 +94,7 @@ export class AdminSettingsComponent implements OnInit {
     this.jQuery('#knob').css('left', '66%');
     this.jQuery('#on').css('opacity', '1');
     this.jQuery('#off').css('opacity', '0');
-    this.jQuery('#switch').css('background-color', '#ec1e8d');
+    this.jQuery('#switch').css('background-color', '#84120B');
   }
 
   switchKnobOff() {

@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/invergent/wyc-ovf.svg?branch=develop)](https://travis-ci.org/invergent/wyc-ovf) [![Maintainability](https://api.codeclimate.com/v1/badges/297db6580f3139746d9a/maintainability)](https://codeclimate.com/github/invergent/wyc-ovf/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/297db6580f3139746d9a/test_coverage)](https://codeclimate.com/github/invergent/wyc-ovf/test_coverage)
+[![Build Status](https://travis-ci.org/invergent/vla-overtime-ui.svg?branch=develop)](https://travis-ci.org/invergent/vla-overtime-ui) [![Maintainability](https://api.codeclimate.com/v1/badges/deecaf2f3fa5f721f399/maintainability)](https://codeclimate.com/github/invergent/vla-overtime-ui/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/deecaf2f3fa5f721f399/test_coverage)](https://codeclimate.com/github/invergent/vla-overtime-ui/test_coverage)
 
 # OvertimeFrontend
 

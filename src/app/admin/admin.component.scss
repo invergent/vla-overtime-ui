@@ -11,8 +11,8 @@ top-nav {
 }
 
 .active {
-  background-color: $dashboard-background-color !important;
-  color: $color-black !important;
+  background-color: $brand-color !important;
+  color: $color-white !important;
 }
 
 .content-wrapper {
@@ -22,7 +22,7 @@ top-nav {
   box-sizing: border-box;
   .side-nav {
     flex: 0 0 250px;
-    background-color: $brand-color;
+    background-color: $color-white;
     transition: all .4s ease-in-out;
     overflow-y: auto;
     .side-nav-tags {
@@ -39,7 +39,7 @@ top-nav {
     }
     .side-nav-link {
       display: block;
-      color: $color-white;
+      color: $color-black;
       .icon-wrapper {
         display: inline-block;
         width: 20px;
@@ -53,7 +53,7 @@ top-nav {
         margin: 10px auto;
       }
       &:hover:not(.active) {
-        background-color: $brand-color-light !important;
+        background-color: $dashboard-background-color !important;
       }
     }
   }
