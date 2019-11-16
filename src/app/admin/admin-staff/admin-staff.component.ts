@@ -128,6 +128,11 @@ export class AdminStaffComponent implements OnInit {
     this.currentModal = 'excelErrorModal';
   }
 
+  clearForm() {
+    const fields = ['staffId', 'firstname', 'lastname', 'middlename', 'email', 'phone', 'accountNumber'];
+    fields.forEach(field => (this[field] = ''));
+  }
+
   async handleSubmit(formValues, currentModal) {
     const updateMethod = this.formSubmissionService.getUpdateMethod(currentModal);
     let submissionData
@@ -157,6 +162,7 @@ export class AdminStaffComponent implements OnInit {
       this[currentModal] = false;
       this.displaySpinner = false;
       this.fileInvalid = true;
+      this.clearForm();
     } catch (error) {
       this.displaySpinner = false;
       if(error.error) {

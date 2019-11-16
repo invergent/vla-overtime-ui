@@ -11,8 +11,8 @@ top-nav {
 }
 
 .active {
-  background-color: $dashboard-background-color !important;
-  color: $color-black !important;
+  background-color: $brand-color !important;
+  color: $color-white !important;
 }
 
 .content-wrapper {
@@ -22,28 +22,21 @@ top-nav {
   box-sizing: border-box;
   .side-nav {
     flex: 0 0 250px;
-    background-color: $brand-color;
+    background-color: $color-white;
     transition: all .4s ease-in-out;
     .new-claim-button-wrapper {
       margin: 30px auto 20px;
       text-align: center;
       button {
         @include submit-button;
-        background-color: transparent;
-        border: 1px solid $color-white;
-        color: $color-white;
-        transition: all .2s ease-in-out;
         &:hover {
-          background-color: $brand-color-light;
-        }
-        &:focus {
-          outline: none;
+          box-shadow: 0 0 0 0 $faint-color-ex-light;
         }
       }
     }
     .side-nav-link {
       display: block;
-      color: $color-white;
+      color: $color-black;
       .icon-wrapper {
         display: inline-block;
         width: 20px;
@@ -57,7 +50,7 @@ top-nav {
         margin: 10px auto;
       }
       &:hover:not(.active) {
-        background-color: $brand-color-light !important;
+        background-color: $dashboard-background-color !important;
       }
     }
     hr {
