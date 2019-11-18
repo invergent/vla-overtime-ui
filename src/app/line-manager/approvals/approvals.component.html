@@ -11,39 +11,42 @@
   <div class="claim-requests-wrapper">
     <div><p>{{errorMessage}}</p></div>
     <div *ngFor="let claim of claimsToApprove" tabindex="0" class="claim-request" id="{{claim.id}}">
-      <div class="direction-icon"><i class="fa fa-chevron-right"></i></div>
-      <div class="request-details">
-        <div class="claim-body" id="claim{{claim.id}}">
-          <div class="staff-image">
-            <div class="image-wrapper">
-              <img src="{{claim?.image | transformImage}}" alt="Staff Avater">
-            </div>
+      <div class="claim-body" id="claim{{claim.id}}">
+        <div class="staff-image">
+          <div class="image-wrapper">
+            <img src="{{claim?.image | transformImage}}" alt="Staff Avater">
           </div>
-          <div class="claim-details">
-            <div class="name-wrapper">
-              <p class="name">{{claim?.lastname}} {{claim?.firstname}} {{claim?.middlename?.substring(0,1)}} (₦{{claim?.amount | number}})</p>
-              <p class="claim-elements">{{claim?.claimElements}} claim elements</p>
-            </div>
+        </div>
+        <div class="claim-details">
+          <div class="name-wrapper">
+            <p class="name">{{claim?.lastname}} {{claim?.firstname}} {{claim?.middlename?.substring(0,1)}} (₦{{claim?.amount | number}})</p>
+            <p class="claim-elements">{{claim?.claimElements}} claim elements</p>
           </div>
-          <div class="approval-buttons">
-            <div class="buttons-wrapper">
-              <div class="approval-btn approve" (mousedown)="runApproval($event, 'approve '+claim.id)">
-                <span class="toolTip">Approve</span>          
-                <img src="/assets/images/green-check.png" alt="Approve Icon">
-              </div>
-              <div class="approval-btn request-edit" (mousedown)="toggleModalDisplay('requestEditModal', claim, $event)">
-                <span class="toolTip">Request edit</span>          
-                <img src="/assets/images/edit.png" alt="Request Edit Icon">
-              </div>
-              <div class="approval-btn decline" (mousedown)="runApproval($event, 'decline '+claim.id)">
-                <span class="toolTip">Decline</span>            
-                <img src="/assets/images/declined.png" alt="Decline Icon">
-              </div>
+        </div>
+        <div class="approval-buttons">
+          <div class="buttons-wrapper">
+            <div class="approval-btn approve" (mousedown)="runApproval($event, 'approve '+claim.id)">
+              <span class="toolTip">Approve</span>          
+              <img src="/assets/images/green-check.png" alt="Approve Icon">
+            </div>
+            <div *ngIf="lineManager?.role === 'supervisor'" class="approval-btn request-edit" (mousedown)="toggleModalDisplay('requestEditModal', claim, $event)">
+              <span class="toolTip">Request edit</span>          
+              <img src="/assets/images/edit.png" alt="Request Edit Icon">
+            </div>
+            <div class="approval-btn decline" (mousedown)="runApproval($event, 'decline '+claim.id)">
+              <span class="toolTip">Decline</span>            
+              <img src="/assets/images/declined.png" alt="Decline Icon">
             </div>
           </div>
         </div>
-        <claim-details [claim]="claim"></claim-details>          
       </div>
+      <div class="see-more-button">
+        <div class="more-icon">
+          <i class="fa fa-chevron-right"></i>
+          <span>Show details</span>
+        </div>
+      </div>
+      <claim-details [claim]="claim"></claim-details>
     </div>
   </div>
   <div *ngIf="!!claimsToApprove.length" class="claims-counter">

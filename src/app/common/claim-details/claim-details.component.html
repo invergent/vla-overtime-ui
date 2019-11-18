@@ -1,7 +1,7 @@
 <section class="claim-details">
   <div *ngIf="claim?.editRequested" class="edit-message-section">
     <div class="edit-message">
-      <h4>Your line manager said:</h4>
+      <h4>Your {{claim?.editRequester}} said:</h4>
       <p>"{{claim?.editMessage}}"</p>
     </div>
   </div>

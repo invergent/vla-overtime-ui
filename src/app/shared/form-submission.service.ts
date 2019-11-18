@@ -60,23 +60,18 @@ export class FormSubmissionService {
     return `${trimmedString.charAt(0).toUpperCase()}${trimmedString.slice(1)}`;
   }
 
-  // addLineManagerRole(currentModal) {
-  //   let lineManagerRole = currentModal.split('Modal')[0];
-
-  //   if (lineManagerRole === 'supervisor') {
-  //     lineManagerRole = this.nameSanitizer(lineManagerRole);
-  //   } else {
-  //     lineManagerRole = lineManagerRole.toUpperCase();
-  //   }
-
-  //   return lineManagerRole;
-  // }
+  addLineManagerRole(currentModal) {
+    let lineManagerRole = currentModal.split('Modal')[0];
+    if (lineManagerRole === 'bsm') lineManagerRole = lineManagerRole.toUpperCase();
+    return lineManagerRole;
+  }
 
 
   getUpdateMethod(openModal) {
     const updateMethods = {
       imageModal: 'updateImage',
-      lineManagerModal: 'updateLineManagerInfo',
+      supervisorModal: 'updateLineManagerInfo',
+      bsmModal: 'updateLineManagerInfo',
       bulkModal: 'createBulk',
       singleModal: 'createSingle'
     };

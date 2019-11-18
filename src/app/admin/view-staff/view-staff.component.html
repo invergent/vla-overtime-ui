@@ -40,34 +40,65 @@
         <p class="details-item">{{staff?.branch || '--'}}</p>
       </div>
     </div>
-    <div class="lm lineManager">
+    <div class="lm supervisor">
       <div class="lm-details-header">
-        <p>Line Manager</p>
+        <p>Supervisor</p>
       </div>
       <div class="lm-details-body">
         <div class="details-header">
           <p>ID Number</p>
         </div>
         <div class="id-number details-item">
-          <p>{{staff?.lineManagerIdNumber || '--'}}</p>
+          <p>{{staff?.supervisorIdNumber || '--'}}</p>
         </div>
         <div class="details-header">
           <p>Name</p>
         </div>
         <div class="name details-item">
-          <p>{{staff?.lineManagerFirstName || '--'}} {{staff?.lineManagerLastName}}</p>
+          <p>{{staff?.supervisorFirstName || '--'}} {{staff?.supervisorLastName}}</p>
         </div>
         <div class="phone details-header">
           <p>Phone Number</p>
         </div>
         <div class="phone details-item">
-          <p>{{staff?.lineManagerPhone || '--'}}</p>
+          <p>{{staff?.supervisorPhone || '--'}}</p>
         </div>
         <div class="email details-header">
           <p>Email Address</p>
         </div>
         <div class="email details-item">
-          <p>{{staff?.lineManagerEmailAddress || '--'}}</p>
+          <p>{{staff?.supervisorEmailAddress || '--'}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="lm bsm">
+      <div class="lm-details-header">
+        <p>Countersigning Supervisor</p>
+      </div>
+      <div class="lm-details-body">
+        <div class="details-header">
+          <p>ID Number</p>
+        </div>
+        <div class="id-number details-item">
+          <p>{{staff?.bsmIdNumber || '--'}}</p>
+        </div>
+        <div class="details-header">
+          <p>Name</p>
+        </div>
+        <div class="name details-item">
+          <p>{{staff?.bsmFirstName || '--'}} {{staff?.bsmLastName}}</p>
+        </div>
+        <div class="phone details-header">
+          <p>Phone Number</p>
+        </div>
+        <div class="phone details-item">
+          <p>{{staff?.bsmPhone || '--'}}</p>
+        </div>
+        <div class="email details-header">
+          <p>Email Address</p>
+        </div>
+        <div class="email details-item">
+          <p>{{staff?.bsmEmailAddress || '--'}}</p>
         </div>
       </div>
     </div>
@@ -98,7 +129,7 @@
         </ng-template>
         <ng-template [ngSwitchCase]="removeStaffModal">
           <div class="remove-staff">
-            <p>If you proceed, {{staff.firstname}} would be removed from CleonTime. If you change your mind in the future, you would have to add {{staff.firstname}} again.</p>
+            <p>If you proceed, {{staff.firstname}} would be removed from V-Timer. If you change your mind in the future, you would have to add {{staff.firstname}} again.</p>
           </div>
         </ng-template>
       </div>

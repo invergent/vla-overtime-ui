@@ -38,32 +38,42 @@
     padding: 0 20px;
     box-sizing: border-box;
     .claim-request {
-      display: flex;
       width: 620px;
       height: 120px;
       overflow: hidden;
       margin: auto auto 10px;
       border-radius: 8px;
       transition: all .4s ease-in-out;
-      &:focus {
+      &:focus, &:active {
         height: 440px;
         outline: none;
       }
-      &:focus .fa-chevron-right {
-        transform: rotate(90deg);
+      &:active .see-more-button, &:focus .see-more-button {
+        opacity: 0;
       }
-      .direction-icon {
-        flex: 0 0 35px;
-        margin-top: 30px;
-        .fa-chevron-right {
-          font-size: 30px;
-          color: $brand-color;
-          margin-left: 5px;
-          transition: all .4s ease-out;
+      .see-more-button {
+        position: relative;
+        color: $color-white;
+        font-size: 15px;
+        text-align: center;
+        opacity: 1;
+        cursor: pointer;
+        transition: all .6s ease-in;
+        .more-icon {
+          position: absolute;
+          top: -18px;
+          left: 50%;
+          background-color: $brand-color;
+          height: 15px;
+          font-size: 12px;
+          margin-left: -55px;
+          padding: 2px 5px 0;
+          border-radius: 5px;
+          i {
+            transform: rotate(90deg);
+            margin: auto 5px auto auto;
+          }
         }
-      }
-      .request-details {
-        flex: 1;
       }
       .claim-body {
         display: flex;
@@ -305,7 +315,7 @@
     }
     .claim-requests-wrapper {
       .claim-request {
-        height: 175px;
+        height: 185px;
         &:focus {
           height: 770px;
         }
@@ -342,7 +352,7 @@
           .approval-buttons {
             flex-basis: 100%;
             width: 10px;
-            padding: 10px 0 0;
+            padding: 10px 0 15px;
             border-top: 1px solid $faint-border-color;
             box-sizing: border-box;
             .buttons-wrapper {

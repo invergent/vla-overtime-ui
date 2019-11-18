@@ -94,17 +94,22 @@
           color: $color-white;
           font-size: 15px;
           text-align: center;
-          opacity: .7;
+          opacity: 1;
           cursor: pointer;
           transition: all .6s ease-in;
-          i {
+          .more-icon {
             position: absolute;
-            top: -29px;
-            background-color: $brand-color-2;
-            height: 15px;
-            padding: 5px 2px;
-            border-radius: 1000px 0 0 1000px;
-            transform: rotate(90deg);
+            top: -27px;
+            left: 50%;
+            background-color: $brand-color;
+            font-size: 12px;
+            padding: 2px 5px;
+            border-radius: 5px;
+            margin-left: -20px;
+            i {
+              transform: rotate(90deg);
+              margin: auto 5px auto auto;
+            }
           }
         }
         .content-wrapper {

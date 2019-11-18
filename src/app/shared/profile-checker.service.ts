@@ -4,20 +4,21 @@ import { AuthService } from './auth.service';
 @Injectable()
 export class ProfileCheckerService {
   changedPassword: boolean
-  lineManager: string
+  supervisor: string
   bsm: string
   branch: string
   role: string
   phone: string
   accountNumber: string
-  expectedFields: string[] = ['changedPassword', 'role', 'branch', 'phone', 'accountNumber', 'lineManager'];
+  expectedFields: string[] = ['changedPassword', 'role', 'supervisor', 'bsm', 'branch', 'phone', 'accountNumber'];
   pendingFields: string[]
 
   constructor(private authService: AuthService) { }
 
   getCurrentFieldsStatus() {
     this.changedPassword = this.authService.currentStaff.changedPassword;
-    this.lineManager = this.authService.currentStaff.lineManagerEmailAddress;
+    this.supervisor = this.authService.currentStaff.supervisorEmailAddress;
+    this.bsm = this.authService.currentStaff.bsmEmailAddress;
     this.branch = this.authService.currentStaff.branch;
     this.role = this.authService.currentStaff.role;
     this.phone = this.authService.currentStaff.phone;

@@ -31,7 +31,8 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   phoneModal: boolean = false;
   branchModal: boolean = false;
   roleModal: boolean = false;
-  lineManagerModal: boolean = false;
+  supervisorModal: boolean = false;
+  bsmModal: boolean = false;
   accountDetailsModal: boolean = false;
   thanksModal: boolean = false;
 
@@ -50,11 +51,16 @@ export class ProfileComponent implements OnInit, AfterViewInit {
   accountNumber: string
   position: string
   branch: string
-  lineManagerIdNumber: string
-  lineManagerFirstName: string
-  lineManagerLastName: string
-  lineManagerEmailAddress: string
-  lineManagerPhone: string
+  supervisorIdNumber: string
+  supervisorFirstName: string
+  supervisorLastName: string
+  supervisorEmailAddress: string
+  supervisorPhone: string
+  bsmIdNumber: string
+  bsmFirstName: string
+  bsmLastName: string
+  bsmEmailAddress: string
+  bsmPhone: string
 
   // image
   imagePreview: any
@@ -133,8 +139,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       case 'accountNumber':
         return `fill in your ${field === 'phone' ? 'phone' : 'account'} number`;
       case 'branch':
-      case 'lineManager':
-        return `fill in ${field === 'branch' ? 'branch' : 'line manager'} details`;
+      case 'supervisor':
+      case 'bsm':
+        return `fill in ${field === 'bsm' ? 'BSM' : field} details`;
       default:
         return '';
     }
@@ -176,11 +183,16 @@ export class ProfileComponent implements OnInit, AfterViewInit {
     this.accountNumber = this.authService.currentStaff.accountNumber;
     this.position = this.authService.currentStaff.role;
     this.branch = this.authService.currentStaff.branch;
-    this.lineManagerIdNumber = this.authService.currentStaff.lineManagerIdNumber;
-    this.lineManagerFirstName = this.authService.currentStaff.lineManagerFirstName;
-    this.lineManagerLastName = this.authService.currentStaff.lineManagerLastName;
-    this.lineManagerPhone = this.authService.currentStaff.lineManagerPhone;
-    this.lineManagerEmailAddress = this.authService.currentStaff.lineManagerEmailAddress;
+    this.supervisorIdNumber = this.authService.currentStaff.supervisorIdNumber;
+    this.supervisorFirstName = this.authService.currentStaff.supervisorFirstName;
+    this.supervisorLastName = this.authService.currentStaff.supervisorLastName;
+    this.supervisorPhone = this.authService.currentStaff.supervisorPhone;
+    this.supervisorEmailAddress = this.authService.currentStaff.supervisorEmailAddress;
+    this.bsmIdNumber = this.authService.currentStaff.bsmIdNumber;
+    this.bsmFirstName = this.authService.currentStaff.bsmFirstName;
+    this.bsmLastName = this.authService.currentStaff.bsmLastName;
+    this.bsmPhone = this.authService.currentStaff.bsmPhone;
+    this.bsmEmailAddress = this.authService.currentStaff.bsmEmailAddress;
 
     const { lineManagers, branches, roles } = await this.profileService.fetchProfileData();
     this.lineManagers = lineManagers;
@@ -287,7 +299,9 @@ export class ProfileComponent implements OnInit, AfterViewInit {
       return formData.errors.forEach(error => this.toastr.error(error));
     }
           
-    if (currentModal === 'lineManagerModal') formData.data.lineManagerRole = 'Line manager';
+    if (['supervisorModal', 'bsmModal'].includes(currentModal)) {
+      formData.data.role = this.formSubmissionService.addLineManagerRole(currentModal);
+    }
 
     try {
       const { message } = await this.profileService[updateMethod](formData.data);

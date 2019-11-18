@@ -13,11 +13,16 @@ export interface IStaff {
   changedPassword: boolean
   extraMonthsPermitted: boolean
   extraMonthsData: IExtraMonthsData
-  lineManagerIdNumber: string;
-  lineManagerFirstName: string
-  lineManagerLastName: string
-  lineManagerPhone: string;
-  lineManagerEmailAddress: string
+  supervisorIdNumber: string;
+  supervisorFirstName: string
+  supervisorLastName: string
+  supervisorPhone: string;
+  supervisorEmailAddress: string
+  bsmIdNumber: string;
+  bsmFirstName: string
+  bsmLastName: string
+  bsmPhone: string;
+  bsmEmailAddress: string
 }
 
 export interface IExtraMonthsData {
@@ -45,9 +50,12 @@ export interface IProfileUpdate {
   extraMonthsData?: IExtraMonthsData
   roleId?: number
   branchId?: number
-  lineManagerFirstName?: string
-  lineManagerLastName?: string
-  lineManagerEmailAddress?: string
+  supervisorFirstName?: string
+  supervisorLastName?: string
+  supervisorEmailAddress?: string
+  bsmFirstName?: string
+  bsmLastName?: string
+  bsmEmailAddress?: string
 }
 
 export interface ILineManager {
